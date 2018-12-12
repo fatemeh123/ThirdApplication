@@ -32,6 +32,13 @@ public class SecoundActivity extends AppCompatActivity {
 
         String site=intent.getStringExtra("site");
         txtsite.setText(site);
+        txtsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1= new Intent(SecoundActivity.this,ThirdActivity.class);
+                startActivity(intent1);
+            }
+        });
 
         PreferenceManager.getDefaultSharedPreferences(SecoundActivity.this).edit().putString("name",name).apply();
         PreferenceManager.getDefaultSharedPreferences(SecoundActivity.this).edit().putString("age",age).apply();
